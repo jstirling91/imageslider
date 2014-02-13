@@ -1,0 +1,115 @@
+<html>
+    <script>
+        var length = 15;
+        var index = 0;
+        function nextImg(){
+            index = (index + 1) % length;
+            var tempIndex;
+            if(index == 0){
+                tempIndex = length - 1;
+            }
+            else{
+                tempIndex = index - 1;
+            }
+            document.getElementById('image' + tempIndex).style.visibility="hidden";
+            document.getElementById('image' + index).style.visibility="visible";
+        }
+        function prevImg(){
+            if(index == 0){
+                index = length - 1;
+            }
+            else{
+                index = index - 1;
+            }
+            var tempIndex;
+            if(index == 0){
+                tempIndex = length - 1;
+            }
+            else{
+                tempIndex = index - 1;
+            }
+            document.getElementById('image' + (index + 1) % length).style.visibility="hidden";
+            document.getElementById('image' + index).style.visibility="visible";
+        }
+    </script>
+    <style>
+        .image{
+            width: 300%;
+            height: auto;
+            position:absolute;
+            top: 0; bottom:0; left: 0; right:0;
+            margin: auto;    
+            border-bottom-color: rgb(0, 0, 0);
+            border-bottom-style: none;
+            border-bottom-width: 0px;
+            border-left-color: rgb(0, 0, 0);
+            border-left-style: none;
+            border-left-width: 0px;
+            border-right-color: rgb(0, 0, 0);
+            border-right-style: none;
+            border-right-width: 0px;
+            border-top-color: rgb(0, 0, 0);
+            border-top-style: none;
+            border-top-width: 0px;
+            cursor: e-resize;
+            height: 750px;
+            left: 0px;
+            line-height: 12px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            position: absolute;
+            top: -6px;
+            width: 1280px;
+            z-index: -1;
+        }
+
+        .infront {
+            z-index: 1;
+            font-family: 'Balthazar', serif;
+            position: absolute;
+            color: red;
+
+        }
+        #left{
+            height: 100%;
+            width: 50%;
+            cursor: w-resize;
+            float: left;
+        }
+        #right{
+            height: 100%;
+            width: 50%;
+            cursor: e-resize;
+            float: right;
+        }
+    </style>
+    <body onload="loadJSON()">
+        <div class="infront">
+        WILLIAM STIRLING<br><br><br>
+        about.<br>
+        booking. <br>
+        contact. <br>
+        </div>
+        <div id="body" style="height: 100%; width: 100%; position: fixed;" >
+        <div id="left" onclick="prevImg()"></div>
+        <div id="right" onclick="nextImg()"></div>
+        <img class="image" id="image0" src="Content/Slide1.jpg">
+        <img class="image" id="image1" src="Content/IMG_4151.jpg" style="visibility:hidden;">
+        <img class="image" id="image2" src="Content/IMG_4173.jpg" style="visibility:hidden;">
+        <img class="image" id="image3" src="Content/IMG_4186.jpg" style="visibility:hidden;">
+        <img class="image" id="image4" src="Content/IMG_4196.jpg" style="visibility:hidden;">
+        <img class="image" id="image5" src="Content/IMG_4223.jpg" style="visibility:hidden;">
+        <img class="image" id="image6" src="Content/IMG_4263.jpg" style="visibility:hidden;">
+        <img class="image" id="image7" src="Content/IMG_4265.jpg" style="visibility:hidden;">
+        <img class="image" id="image8" src="Content/IMG_4266.jpg" style="visibility:hidden;">
+        <img class="image" id="image9" src="Content/IMG_4271.jpg" style="visibility:hidden;">
+        <img class="image" id="image10" src="Content/IMG_4292.jpg" style="visibility:hidden;">
+        <img class="image" id="image11" src="Content/IMG_4303.jpg" style="visibility:hidden;">
+        <img class="image" id="image12" src="Content/IMG_4346.jpg" style="visibility:hidden;">
+        <img class="image" id="image13" src="Content/IMG_4549.jpg" style="visibility:hidden;">
+        <img class="image" id="image14" src="Content/IMG_4133.jpg" style="visibility:hidden;">
+        </div>
+    </body>
+<html>
